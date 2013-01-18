@@ -2,14 +2,11 @@
 old_file=$(basename $(ls -r dates | head -1))
 
 location="$(dirname ${BASH_SOURCE[0]})"
+todo_directory="/home/$(whoami)/.todo"
 
-today=$(date --date="${old_file%.*} + day" +%F)
-today_file="$location/$tomorrow"
+lead_day=$(date --date="${old_file%.*}" +%F)
+new_day=$(date --date="${lead_day} + day" +%F)
 
-tomorrow=$(date --date="${old_fil
-tomorrow_file="$location/$date.txt"
+new_day_file="$location/$new_day.txt"
 
-echo "$today"
-
-. create_day.sh "$today_file"
-. create_day.sh "$tomorrow_file"
+cp --no-clobber "$location/template.txt" "$location/dates/$new_day_file"
