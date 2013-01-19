@@ -4,7 +4,6 @@ todo_directory="/home/$(whoami)/.todo"
 
 . "$location/repoint_current.sh"
 
-cat "$todo_directory/$current"
 alias todo="vi $location/$current"
 alias todo-today="vi $location/$current"
 alias todo-tomorrow="vi $location/$current"
