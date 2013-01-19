@@ -10,3 +10,5 @@ new_day=$(date --date="${lead_day} + day" +%F)
 new_day_file="$location/$new_day.txt"
 
 cp --no-clobber "$location/template.txt" "$location/dates/$new_day_file"
+cat "$location/routine.txt" >> "$location/dates/$new_day_file"
+
