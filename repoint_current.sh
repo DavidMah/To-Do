@@ -6,9 +6,14 @@ today=$(date +%F)
 today_file="$today.txt"
 current="today"
 
+echo "$location"
+
 tomorrow=$(date --date="tomorrow" +%F)
 tomorrow_file="$tomorrow.txt"
 tomorrow_link="tomorrow"
+
+rm "$todo_directory/routines"
+ln -s "$location/routine.txt" "$todo_directory/routine"
 
 . "$location/create_day.sh" "$today_file"
 rm "$todo_directory/$current"
