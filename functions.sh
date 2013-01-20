@@ -7,3 +7,4 @@ alias todo-routines="echo -e '\033[33m' && cat '$todo_dir/routine' && echo -e '\
 alias todo-routines-edit="vi '$todo_dir/routine'"
 alias todo-edit="vi '$todo_dir/today'"
 alias todo-tomorrow="vi '$todo_dir/tomorrow'"
+alias todo-yesterday="echo -e '\033[33m' && cat '$todo_dir/yesterday' && echo -e '\033[0m'"
