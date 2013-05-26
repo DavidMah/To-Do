@@ -18,6 +18,9 @@ Every command is under the `todo` binary. You can type `todo edit
 _date_` to edit your todo list for some date, or `todo _date_` to dump
 your todo list for that date.
 
+The storage directory will be created and initialized upon your first
+run of the program. By default, it will be `$HOME/.todo`.
+
 Some examples of things to type:
 
 * `todo today`
@@ -32,10 +35,9 @@ This is backed by the `date` program, so any date that can be input into
 
 ## Storage
 
-Files are in `$HOME/.todo`
+Files are in `$HOME/.todo` by default.
 
-There are two base files that you can modify, `routine.txt` and
-`template.txt`.
+There is a base file that you can modify, `template.txt`.
 
  The todo list files themselves are on `$HOME/.todo/dates`, and are just
 text files that correspond to the actual dates.
