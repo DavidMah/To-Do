@@ -15,14 +15,16 @@ Tested in Ubuntu Desktop 12.10
 ## Usage
 
 Every command is under the `todo` binary. You can type `todo edit
-_date_` to edit your todo list for some date, or `todo _date_` to dump
-your todo list for that date.
+_date_` to edit your todo list for some date, or `todo _date_` to view
+your todo list for that date. With no arguments, `todo` dumps the todo
+list for the current day.
 
 The storage directory will be created and initialized upon your first
 run of the program. By default, it will be `$HOME/.todo`.
 
 Some examples of things to type:
 
+* `todo`
 * `todo today`
 * `todo edit today`
 * `todo tomorrow`
