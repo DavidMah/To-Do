@@ -1,0 +1,30 @@
+#!/bin/bash
+# The primary interface for the user
+# todo edit $2 => edit $2
+# todo _anything_else_ => print that
+set -e
+location="$(dirname ${BASH_SOURCE[-1]})/.."
+source "$location/lib/utility.sh"
+
+if [[ "$1" = "edit" ]]
+then
+  user_input="$2"
+else
+  user_input="$1"
+fi
+
+# Construct date
+target_date="$(date --date="$user_input" +%F)"
+target_file="$target_date.txt"
+target_full_path="$dates_dir/$target_file"
+. "$location/lib/create_day.sh" "$target_file"
+
+# Edit it or print it
+if [[ "$1" = "edit" ]]
+then
+  vi "$target_full_path"
+else
+  echo -e "\033[37m"
+  cat "$target_full_path"
+  echo -e "\033[0m"
+fi
