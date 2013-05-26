@@ -9,8 +9,10 @@ template_file="$user_dir/template.txt"
 
 # Ensure the directory exists
 mkdir -p "$dates_dir"
-touch "$routine_file"
-touch "$template_file"
+echo "$location/routine.txt"
+echo "$routine_file"
+cp -nv "$location/routine.txt" "$routine_file"
+cp -nv "$location/template.txt" "$template_file"
 if [ ! -e "$dates_dir/$file" ]; then
   echo "$file" >> "$output_path"
   echo "----------" >> "$output_path"
