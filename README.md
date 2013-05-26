@@ -1,5 +1,8 @@
 # Todo App
 
+Simple CLI date-centric todo list in `bash`. Viewing your todo list is `cat` to
+stdout and editing your todolist is `vi`.
+
 Written by David Mah from the University of Washington (MahHaha@gmail.com)
 
 Tested in Ubuntu Desktop 12.10
@@ -36,3 +39,8 @@ There are two base files that you can modify, `routine.txt` and
 
  The todo list files themselves are on `$HOME/.todo/dates`, and are just
 text files that correspond to the actual dates.
+
+## Configuration
+
+All executing code is in `lib` under the application. Feel free to
+modify `utility.sh` to change the directory of storage.
