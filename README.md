@@ -1,3 +1,5 @@
+trololo this whole readme is out of date and i probably won't fix it for awhile
+
 # Todo App
 
 Simple CLI date-centric todo list in `bash`. Viewing your todo list is `cat` to
@@ -5,7 +7,7 @@ stdout and editing your todolist is `vi`.
 
 Written by David Mah from the University of Washington (MahHaha@gmail.com)
 
-Tested in Ubuntu Desktop 12.10
+Tested in Ubuntu Desktop 12.10 and Windows Server 2012
 
 ## Setup
 
