@@ -3,7 +3,7 @@
 # todo edit $2 => edit $2
 # todo _anything_else_ => print that
 set -e
-location="$(dirname ${BASH_SOURCE[-1]})/.."
+location="$(dirname $BASH_SOURCE)/.."
 source "$location/lib/utility.sh"
 
 if [[ "$1" = "edit" ]]

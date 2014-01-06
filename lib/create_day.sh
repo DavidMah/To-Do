@@ -6,7 +6,7 @@ template_file="$user_dir/template.txt"
 
 # Ensure the directory exists
 mkdir -p "$dates_dir"
-cp -nv "$location/template.txt" "$template_file"
+cp "$location/template.txt" "$template_file"
 if [ ! -e "$dates_dir/$file" ]; then
   echo "$file" >> "$output_path"
   echo "----------" >> "$output_path"
