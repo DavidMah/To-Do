@@ -22,7 +22,7 @@ call "%location%\lib\create_day.bat" %target_file%
 
 :: Edit it or print it
 IF "%1"=="edit" (
-  gvim "%target_full_path%"
+  vim "%target_full_path%"
 ) ELSE (
   type "%target_full_path%"
 )
