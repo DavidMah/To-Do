@@ -1,0 +1,56 @@
+#!/bin/bash
+# The primary interface for the user
+# sprint edit $2 => edit $2
+# sprint _anything_else_ => print that
+set -e
+location="$(dirname BASH_SOURCE)/.."
+source "$location/lib/utility.sh"
+
+if [[ "$1" = "edit" ]]
+then
+  user_input="$2"
+else
+  user_input="$1"
+fi
+
+# Construct date
+if [[ "$user_input" = "next" ]]
+then
+  if [[ "$(date +%A)" = "Monday" ]]
+  then
+    start_date="$(date --date="monday next week" +%F)"
+  else
+    start_date="$(date --date="monday this week" +%F)"
+  fi
+  end_date="$(date --date="2 weeks" +%F)"
+elif [[ "$user_input" = "last" ]]
+then
+  if [[ "$(date +%A)" = "Monday" ]]
+  then
+    start_date="$(date --date="monday last week" +%F)"
+  else
+    start_date="$(date --date="monday 2 weeks ago" +%F)"
+  fi
+  end_date="$(date --date="last week" +%F)"
+else
+  if [[ "$(date +%A)" = "Monday" ]]
+  then
+    start_date="$(date --date="monday this week" +%F)"
+  else
+    start_date="$(date --date="monday last week" +%F)"
+  fi
+  end_date="$(date --date="week" +%F)"
+fi
+target_file="$start_date"
+target_full_path="$sprints_dir/$target_file"
+. "$location/lib/create_sprint.sh" "$target_file" "$start_date" "$end_date"
+
+# Edit it or print it
+if [[ "$1" = "edit" ]]
+then
+  vi "$target_full_path"
+else
+  echo -e "\033[37m"
+  cat "$target_full_path"
+  echo -e "\033[0m"
+fi
